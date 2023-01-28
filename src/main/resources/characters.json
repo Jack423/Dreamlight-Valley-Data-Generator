@@ -1,0 +1,624 @@
+[
+  {
+    "id" : 1,
+    "icon" : "assets/images/characters/Merlin.png",
+    "name" : "Merlin",
+    "schedule": [
+      {
+        "time": "7:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "9:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "12:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "2:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "7:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "9:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 2,
+    "icon" : "assets/images/characters/WALL-E.png",
+    "name" : "WALL-E",
+    "schedule": [
+      {
+        "time": "3:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "8:00 AM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "10:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "7:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "9:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 3,
+    "icon" : "assets/images/characters/Maui.png",
+    "name" : "Maui",
+    "schedule": [
+      {
+        "time": "1:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "5:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "6:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "8:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 4,
+    "icon" : "assets/images/characters/Moana.png",
+    "name" : "Moana",
+    "schedule": [
+      {
+        "time": "2:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "3:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "5:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "3:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "5:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "6:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "8:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Unavailable. Sleeping inside her home."
+      }
+    ]
+  },
+  {
+    "id" : 5,
+    "icon" : "assets/images/characters/Remy.png",
+    "name" : "Remy",
+    "schedule": [
+      {
+        "time": "1:00 AM",
+        "location": "Chez Remy working inside the Restaurant"
+      },
+      {
+        "time": "5:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes"
+      },
+      {
+        "time": "11:00 AM",
+        "location": "Chez Remy working inside the Restaurant"
+      },
+      {
+        "time": "2:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes"
+      },
+      {
+        "time": "4:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "6:00 PM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes"
+      }
+    ]
+  },
+  {
+    "id" : 6,
+    "icon" : "assets/images/characters/Ariel.png",
+    "name" : "Ariel",
+    "schedule": [
+      {
+        "time": "6:00 AM",
+        "location": "Unavailable. Sleeping inside her home."
+      },
+      {
+        "time": "10:00 AM",
+        "location": "Wandering the Valley."
+      }
+    ]
+  },
+  {
+    "id" : 7,
+    "icon" : "assets/images/characters/Prince_Eric.png",
+    "name" : "Prince Eric",
+    "schedule": [
+      {
+        "time": "1:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "11:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "1:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "2:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "4:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "11:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      }
+    ]
+  },
+  {
+    "id" : 8,
+    "icon" : "assets/images/characters/Ursula.png",
+    "name" : "Ursula",
+    "schedule": [
+      {
+        "time": "6:00 PM",
+        "location": "Unavailable. Sleeping inside her home."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Wandering the Valley."
+      }
+    ]
+  },
+  {
+    "id" : 9,
+    "icon" : "assets/images/characters/Anna.png",
+    "name" : "Anna",
+    "schedule": [
+      {
+        "time": "4:00 AM",
+        "location": "Unavailable. Sleeping inside her home."
+      },
+      {
+        "time": "8:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "10:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "8:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "6:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes"
+      }
+    ]
+  },
+  {
+    "id" : 10,
+    "icon" : "assets/images/characters/Elsa.png",
+    "name" : "Elsa",
+    "schedule": [
+      {
+        "time": "3:00 AM",
+        "location": "Unavailable. Sleeping inside her home."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "8:00 AM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "10:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "12:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "9:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "11:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 11,
+    "icon" : "assets/images/characters/Kristoff.png",
+    "name" : "Kristoff",
+    "schedule": [
+      {
+        "time": "2:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "3:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "5:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "10:00 AM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "12:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "3:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "5:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Unavailable. Sleeping inside his home."
+      }
+    ]
+  },
+  {
+    "id" : 12,
+    "icon" : "assets/images/characters/Mother_Gothel.png",
+    "name" : "Mother Gothel",
+    "schedule": [
+      {
+        "time": "1:00 AM",
+        "location": "Unavailable. Sleeping inside her home."
+      },
+      {
+        "time": "5:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "12:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "2:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "5:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "7:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 13,
+    "icon" : "assets/images/characters/Donald_Duck.png",
+    "name" : "Donald Duck",
+    "schedule": [
+      {
+        "time": "1:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "3:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "11:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "1:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "3:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "4:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "6:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 14,
+    "icon" : "assets/images/characters/Goofy.png",
+    "name" : "Goofy",
+    "schedule": [
+      {
+        "time": "1:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "5:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "9:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "11:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "1:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "2:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "4:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "11:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      }
+    ]
+  },
+  {
+    "id" : 15,
+    "icon" : "assets/images/characters/Mickey_Mouse.png",
+    "name" : "Mickey Mouse",
+    "schedule": [
+      {
+        "time": "2:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "4:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "2:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "4:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Unavailable. Sleeping inside his home."
+      }
+    ]
+  },
+  {
+    "id" : 16,
+    "icon" : "assets/images/characters/Minnie_Mouse.png",
+    "name" : "Minnie Mouse",
+    "schedule": [
+      {
+        "time": "12:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "2:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Unavailable. Sleeping inside her home."
+      },
+      {
+        "time": "11:00 AM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "11:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "1:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      },
+      {
+        "time": "8:00 PM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Wandering the Valley, her home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 17,
+    "icon" : "assets/images/characters/Scrooge_McDuck.png",
+    "name" : "Scrooge McDuck",
+    "schedule": []
+  },
+  {
+    "id" : 18,
+    "icon" : "assets/images/characters/Scar.png",
+    "name" : "Scar",
+    "schedule": [
+      {
+        "time": "3:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "7:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "9:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "7:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "9:00 PM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 19,
+    "icon" : "assets/images/characters/Woody.png",
+    "name" : "Woody",
+    "schedule": [
+      {
+        "time": "2:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "6:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      }
+    ]
+  },
+  {
+    "id" : 20,
+    "icon" : "assets/images/characters/Buzz_Lightyear.png",
+    "name" : "Buzz Lightyear",
+    "schedule": [
+      {
+        "time": "12:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "2:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Unavailable. Sleeping inside his home."
+      }
+    ]
+  },
+  {
+    "id" : 21,
+    "icon" : "assets/images/characters/Stitch.png",
+    "name" : "Stitch",
+    "schedule": [
+      {
+        "time": "12:00 AM",
+        "location": "Unavailable. Sleeping inside his home."
+      },
+      {
+        "time": "2:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "4:00 AM",
+        "location": "Scrooge's Store browsing clothing and furniture items for sale."
+      },
+      {
+        "time": "6:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "8:00 AM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "10:00 AM",
+        "location": "Wandering the Valley, his home, and other villager homes."
+      },
+      {
+        "time": "8:00 PM",
+        "location": "Chez Remy eating inside the Restaurant."
+      },
+      {
+        "time": "10:00 PM",
+        "location": "Unavailable. Sleeping inside his home."
+      }
+    ]
+  }
+]
