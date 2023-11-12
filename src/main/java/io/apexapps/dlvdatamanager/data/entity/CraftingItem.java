@@ -1,38 +1,46 @@
 package io.apexapps.dlvdatamanager.data.entity;
 
-import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.apexapps.dlvdatamanager.data.CraftingRecipe;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-public class CraftingItem extends AbstractEntity {
+import java.util.List;
 
-    private String craftingRecipe;
-    private String icon;
+@Document("crafting_items")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CraftingItem {
+    @Id
+    private long id;
     private String name;
-    private String type;
+    private String icon;
+    private List<CraftingRecipe> craftingRecipe;
+    private CraftingItemType type;
 
-    public String getCraftingRecipe() {
-        return craftingRecipe;
-    }
-    public void setCraftingRecipe(String craftingRecipe) {
-        this.craftingRecipe = craftingRecipe;
-    }
-    public String getIcon() {
-        return icon;
-    }
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getType() {
-        return type;
-    }
-    public void setType(String type) {
-        this.type = type;
-    }
+    public enum CraftingItemType{
+        @JsonProperty("enchantment")
+        ENCHANTMENT("Enchantment"),
+        @JsonProperty("landscaping")
+        LANDSCAPING("Landscaping"),
+        @JsonProperty("functionalItem")
+        FUNCTIONAL_ITEM("Functional Item"),
+        @JsonProperty("furniture")
+        FURNITURE("Furniture")
+        ;
 
+        public final String name;
+
+        CraftingItemType(String name) {
+            this.name = name;
+        }
+    }
 }

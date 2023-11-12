@@ -1,9 +1,8 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.Character;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CharacterRepository extends JpaRepository<Character, Long>, JpaSpecificationExecutor<Character> {
+public interface CharacterRepository extends MongoRepository<Character, Long> {
 
 }

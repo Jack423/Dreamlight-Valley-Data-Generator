@@ -1,11 +1,12 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.Character;
-import java.util.Optional;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CharacterService {
@@ -32,12 +33,16 @@ public class CharacterService {
         return repository.findAll(pageable);
     }
 
-    public Page<Character> list(Pageable pageable, Specification<Character> filter) {
+    public Page<Character> list(Pageable pageable, Example<Character> filter) {
         return repository.findAll(filter, pageable);
     }
 
     public int count() {
         return (int) repository.count();
+    }
+
+    public void importFromJson() {
+
     }
 
 }

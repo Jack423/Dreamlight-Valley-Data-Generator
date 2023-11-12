@@ -1,9 +1,8 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.Seed;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface SeedRepository extends JpaRepository<Seed, Long>, JpaSpecificationExecutor<Seed> {
+public interface SeedRepository extends MongoRepository<Seed, Long> {
 
 }

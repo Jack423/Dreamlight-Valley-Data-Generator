@@ -1,66 +1,48 @@
 package io.apexapps.dlvdatamanager.data.entity;
 
-import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.apexapps.dlvdatamanager.data.RecipeIngredient;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-public class Meal extends AbstractEntity {
+import java.util.List;
 
+@Document("meals")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Meal {
+    @Id
+    private long id;
+    private String name;
+    private String icon;
+    private RecipeType recipeType;
+    private Integer stars;
     private String description;
     private Integer energy;
-    private String icon;
-    private String ingredients;
-    private String name;
-    private String recipeType;
+    private List<RecipeIngredient> ingredients;
     private Integer sellPrice;
-    private Integer stars;
 
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public Integer getEnergy() {
-        return energy;
-    }
-    public void setEnergy(Integer energy) {
-        this.energy = energy;
-    }
-    public String getIcon() {
-        return icon;
-    }
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-    public String getIngredients() {
-        return ingredients;
-    }
-    public void setIngredients(String ingredients) {
-        this.ingredients = ingredients;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getRecipeType() {
-        return recipeType;
-    }
-    public void setRecipeType(String recipeType) {
-        this.recipeType = recipeType;
-    }
-    public Integer getSellPrice() {
-        return sellPrice;
-    }
-    public void setSellPrice(Integer sellPrice) {
-        this.sellPrice = sellPrice;
-    }
-    public Integer getStars() {
-        return stars;
-    }
-    public void setStars(Integer stars) {
-        this.stars = stars;
-    }
+    public enum RecipeType {
+        @JsonProperty("Appetizers")
+        APPETIZERS("Appetizers"),
+        @JsonProperty("Entrées")
+        ENTREES("Entrées"),
+        @JsonProperty("Desserts")
+        DESSERTS("Desserts")
+        ;
 
+        public final String name;
+
+        RecipeType(String name) {
+            this.name = name;
+        }
+    }
 }

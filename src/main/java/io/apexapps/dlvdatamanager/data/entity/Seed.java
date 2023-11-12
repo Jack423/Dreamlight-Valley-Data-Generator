@@ -1,73 +1,30 @@
 package io.apexapps.dlvdatamanager.data.entity;
 
-import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.apexapps.dlvdatamanager.data.LocationEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-public class Seed extends AbstractEntity {
-
+@Document("seeds")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Seed {
+    @Id
+    private long id;
     private String growTime;
     private String icon;
-    private String ingredientType;
+    private Ingredient.IngredientType ingredientType;
     private String name;
-    private String nativeBiome;
+    private LocationEnum nativeBiome;
     private Integer seedPrice;
     private Integer sellPrice;
     private Integer waterings;
     private Integer yield;
-
-    public String getGrowTime() {
-        return growTime;
-    }
-    public void setGrowTime(String growTime) {
-        this.growTime = growTime;
-    }
-    public String getIcon() {
-        return icon;
-    }
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-    public String getIngredientType() {
-        return ingredientType;
-    }
-    public void setIngredientType(String ingredientType) {
-        this.ingredientType = ingredientType;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public String getNativeBiome() {
-        return nativeBiome;
-    }
-    public void setNativeBiome(String nativeBiome) {
-        this.nativeBiome = nativeBiome;
-    }
-    public Integer getSeedPrice() {
-        return seedPrice;
-    }
-    public void setSeedPrice(Integer seedPrice) {
-        this.seedPrice = seedPrice;
-    }
-    public Integer getSellPrice() {
-        return sellPrice;
-    }
-    public void setSellPrice(Integer sellPrice) {
-        this.sellPrice = sellPrice;
-    }
-    public Integer getWaterings() {
-        return waterings;
-    }
-    public void setWaterings(Integer waterings) {
-        this.waterings = waterings;
-    }
-    public Integer getYield() {
-        return yield;
-    }
-    public void setYield(Integer yield) {
-        this.yield = yield;
-    }
-
 }

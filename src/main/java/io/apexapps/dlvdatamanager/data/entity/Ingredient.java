@@ -1,94 +1,66 @@
 package io.apexapps.dlvdatamanager.data.entity;
 
-import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import io.apexapps.dlvdatamanager.data.LocationEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-public class Ingredient extends AbstractEntity {
+import java.util.Set;
 
-    private Integer buyPrice;
+@Document("ingredients")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Ingredient {
+    @Id
+    private long id;
+    private String name;
+    private String icon;
     private String description;
+    private Integer buyPrice;
     private Integer energy;
     private String growTime;
     private boolean hidden;
-    private String icon;
-    private String ingredientType;
-    private String name;
+    private IngredientType ingredientType;
     private Integer sellPrice;
     private Integer water;
     private Integer yield;
-    private String location;
+    private Set<LocationEnum> location;
 
-    public Integer getBuyPrice() {
-        return buyPrice;
-    }
-    public void setBuyPrice(Integer buyPrice) {
-        this.buyPrice = buyPrice;
-    }
-    public String getDescription() {
-        return description;
-    }
-    public void setDescription(String description) {
-        this.description = description;
-    }
-    public Integer getEnergy() {
-        return energy;
-    }
-    public void setEnergy(Integer energy) {
-        this.energy = energy;
-    }
-    public String getGrowTime() {
-        return growTime;
-    }
-    public void setGrowTime(String growTime) {
-        this.growTime = growTime;
-    }
-    public boolean isHidden() {
-        return hidden;
-    }
-    public void setHidden(boolean hidden) {
-        this.hidden = hidden;
-    }
-    public String getIcon() {
-        return icon;
-    }
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-    public String getIngredientType() {
-        return ingredientType;
-    }
-    public void setIngredientType(String ingredientType) {
-        this.ingredientType = ingredientType;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public Integer getSellPrice() {
-        return sellPrice;
-    }
-    public void setSellPrice(Integer sellPrice) {
-        this.sellPrice = sellPrice;
-    }
-    public Integer getWater() {
-        return water;
-    }
-    public void setWater(Integer water) {
-        this.water = water;
-    }
-    public Integer getYield() {
-        return yield;
-    }
-    public void setYield(Integer yield) {
-        this.yield = yield;
-    }
-    public String getLocation() {
-        return location;
-    }
-    public void setLocation(String location) {
-        this.location = location;
-    }
+    public enum IngredientType {
+        @JsonProperty("Vegetables")
+        VEGETABLES("Vegetables"),
+        @JsonProperty("Fruit")
+        FRUIT("Fruit"),
+        @JsonProperty("Grains")
+        GRAINS("Grains"),
+        @JsonProperty("Dairy and Oil")
+        DAIRY_AND_OIL("Dairy & Oil"),
+        @JsonProperty("Spices & Herbs")
+        SPICES_AND_HERBS("Spices & Herbs"),
+        @JsonProperty("Sweets")
+        SWEETS("Sweets"),
+        @JsonProperty("Ice")
+        ICE("Ice"),
+        @JsonProperty("Seafood")
+        SEAFOOD("Seafood"),
+        @JsonProperty("Fish")
+        FISH("Fish"),
+        @JsonProperty("Material")
+        MATERIAL("Material")
+        ;
 
+        public final String name;
+
+        IngredientType(String name) {
+            this.name = name;
+        }
+    }
 }

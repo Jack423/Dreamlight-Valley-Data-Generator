@@ -1,12 +1,8 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.RefinedMaterial;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface RefinedMaterialRepository
-        extends
-            JpaRepository<RefinedMaterial, Long>,
-            JpaSpecificationExecutor<RefinedMaterial> {
+public interface RefinedMaterialRepository extends MongoRepository<RefinedMaterial, Long> {
 
 }

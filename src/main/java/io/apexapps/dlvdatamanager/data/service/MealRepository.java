@@ -1,9 +1,8 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.Meal;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface MealRepository extends JpaRepository<Meal, Long>, JpaSpecificationExecutor<Meal> {
+public interface MealRepository extends MongoRepository<Meal, Long> {
 
 }

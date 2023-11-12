@@ -1,12 +1,8 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.CraftingItem;
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface CraftingItemRepository
-        extends
-            JpaRepository<CraftingItem, Long>,
-            JpaSpecificationExecutor<CraftingItem> {
+public interface CraftingItemRepository extends MongoRepository<CraftingItem, Long> {
 
 }

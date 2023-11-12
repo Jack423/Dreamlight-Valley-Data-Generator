@@ -1,38 +1,27 @@
 package io.apexapps.dlvdatamanager.data.entity;
 
-import jakarta.persistence.Entity;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import io.apexapps.dlvdatamanager.data.LocationEnum;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-public class Gem extends AbstractEntity {
+import java.util.Set;
 
+@Document("gems")
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class Gem {
+    @Id
+    private long id;
     private String icon;
-    private String locations;
+    private Set<LocationEnum> locations;
     private String name;
     private Integer sellPrice;
-
-    public String getIcon() {
-        return icon;
-    }
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-    public String getLocations() {
-        return locations;
-    }
-    public void setLocations(String locations) {
-        this.locations = locations;
-    }
-    public String getName() {
-        return name;
-    }
-    public void setName(String name) {
-        this.name = name;
-    }
-    public Integer getSellPrice() {
-        return sellPrice;
-    }
-    public void setSellPrice(Integer sellPrice) {
-        this.sellPrice = sellPrice;
-    }
-
 }

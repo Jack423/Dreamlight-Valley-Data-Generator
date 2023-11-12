@@ -1,11 +1,12 @@
 package io.apexapps.dlvdatamanager.data.service;
 
 import io.apexapps.dlvdatamanager.data.entity.Seed;
-import java.util.Optional;
+import org.springframework.data.domain.Example;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class SeedService {
@@ -32,7 +33,7 @@ public class SeedService {
         return repository.findAll(pageable);
     }
 
-    public Page<Seed> list(Pageable pageable, Specification<Seed> filter) {
+    public Page<Seed> list(Pageable pageable, Example<Seed> filter) {
         return repository.findAll(filter, pageable);
     }
 

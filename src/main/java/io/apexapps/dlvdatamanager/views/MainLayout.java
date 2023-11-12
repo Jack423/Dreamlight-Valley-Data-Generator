@@ -2,16 +2,14 @@ package io.apexapps.dlvdatamanager.views;
 
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
-import com.vaadin.flow.component.html.Footer;
-import com.vaadin.flow.component.html.H1;
-import com.vaadin.flow.component.html.H2;
-import com.vaadin.flow.component.html.Header;
+import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.Scroller;
 import com.vaadin.flow.component.sidenav.SideNav;
 import com.vaadin.flow.component.sidenav.SideNavItem;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.theme.lumo.LumoUtility;
-import io.apexapps.dlvdatamanager.views.allothercraftingitems.AllOtherCraftingItemsView;
+import io.apexapps.dlvdatamanager.data.service.*;
+import io.apexapps.dlvdatamanager.views.allothercraftingitems.CraftingItemsView;
 import io.apexapps.dlvdatamanager.views.characters.CharactersView;
 import io.apexapps.dlvdatamanager.views.critters.CrittersView;
 import io.apexapps.dlvdatamanager.views.fish.FishView;
@@ -30,9 +28,44 @@ import org.vaadin.lineawesome.LineAwesomeIcon;
  */
 public class MainLayout extends AppLayout {
 
+    private final CharacterService characterService;
+    private final CritterService critterService;
+    private final FishService fishService;
+    private final ForagingService foragingService;
+    private final IngredientService ingredientService;
+    private final MealService mealService;
+    private final RefinedMaterialService refinedMaterialService;
+    private final CraftingItemService craftingItemService;
+    private final GemService gemService;
+    private final LocationService locationService;
+    private final SeedService seedService;
+
     private H2 viewTitle;
 
-    public MainLayout() {
+    public MainLayout(
+            CharacterService characterService,
+            CritterService critterService,
+            FishService fishService,
+            ForagingService foragingService,
+            IngredientService ingredientService,
+            MealService mealService,
+            RefinedMaterialService refinedMaterialService,
+            CraftingItemService craftingItemService,
+            GemService gemService,
+            LocationService locationService,
+            SeedService seedService
+    ) {
+        this.characterService = characterService;
+        this.critterService = critterService;
+        this.fishService = fishService;
+        this.foragingService = foragingService;
+        this.ingredientService = ingredientService;
+        this.mealService = mealService;
+        this.refinedMaterialService = refinedMaterialService;
+        this.craftingItemService = craftingItemService;
+        this.gemService = gemService;
+        this.locationService = locationService;
+        this.seedService = seedService;
         setPrimarySection(Section.DRAWER);
         addDrawerContent();
         addHeaderContent();
@@ -60,23 +93,63 @@ public class MainLayout extends AppLayout {
 
     private SideNav createNavigation() {
         SideNav nav = new SideNav();
-
         nav.addItem(new SideNavItem("Home", HomeView.class, LineAwesomeIcon.HOME_SOLID.create()));
-        nav.addItem(new SideNavItem("Characters", CharactersView.class, LineAwesomeIcon.MALE_SOLID.create()));
-        nav.addItem(new SideNavItem("Critters", CrittersView.class, LineAwesomeIcon.CAT_SOLID.create()));
-        nav.addItem(new SideNavItem("Fish", FishView.class, LineAwesomeIcon.FISH_SOLID.create()));
-        nav.addItem(new SideNavItem("Foraging", ForagingView.class, LineAwesomeIcon.SHOPPING_BASKET_SOLID.create()));
-        nav.addItem(new SideNavItem("Ingredients", IngredientsView.class, LineAwesomeIcon.APPLE_ALT_SOLID.create()));
-        nav.addItem(new SideNavItem("Meals", MealsView.class, LineAwesomeIcon.BREAD_SLICE_SOLID.create()));
-        nav.addItem(new SideNavItem("Refined Materials", RefinedMaterialsView.class,
-                LineAwesomeIcon.HAMMER_SOLID.create()));
-        nav.addItem(new SideNavItem("All Other Crafting Items", AllOtherCraftingItemsView.class,
-                LineAwesomeIcon.COLUMNS_SOLID.create()));
-        nav.addItem(new SideNavItem("Gems", GemsView.class, LineAwesomeIcon.GEM_SOLID.create()));
-        nav.addItem(new SideNavItem("Locations", LocationsView.class, LineAwesomeIcon.MAP_MARKER_SOLID.create()));
-        nav.addItem(new SideNavItem("Seeds", SeedsView.class, LineAwesomeIcon.SEEDLING_SOLID.create()));
+
+        var charactersSideItem = new SideNavItem("Characters", CharactersView.class, LineAwesomeIcon.MALE_SOLID.create());
+        charactersSideItem.setSuffixComponent(buildCountSuffixItem(characterService.count()));
+        nav.addItem(charactersSideItem);
+
+        var crittersSideItem = new SideNavItem("Critters", CrittersView.class, LineAwesomeIcon.CAT_SOLID.create());
+        crittersSideItem.setSuffixComponent(buildCountSuffixItem(critterService.count()));
+        nav.addItem(crittersSideItem);
+
+        var fishSideItem = new SideNavItem("Fish", FishView.class, LineAwesomeIcon.FISH_SOLID.create());
+        fishSideItem.setSuffixComponent(buildCountSuffixItem(fishService.count()));
+        nav.addItem(fishSideItem);
+
+        var foragingSideItem = new SideNavItem("Foraging", ForagingView.class, LineAwesomeIcon.SHOPPING_BASKET_SOLID.create());
+        foragingSideItem.setSuffixComponent(buildCountSuffixItem(foragingService.count()));
+        nav.addItem(foragingSideItem);
+
+        var ingredientsSideItem = new SideNavItem("Ingredients", IngredientsView.class, LineAwesomeIcon.APPLE_ALT_SOLID.create());
+        ingredientsSideItem.setSuffixComponent(buildCountSuffixItem(ingredientService.count()));
+        nav.addItem(ingredientsSideItem);
+
+        var mealsSideItem = new SideNavItem("Meals", MealsView.class, LineAwesomeIcon.BREAD_SLICE_SOLID.create());
+        mealsSideItem.setSuffixComponent(buildCountSuffixItem(mealService.count()));
+        nav.addItem(mealsSideItem);
+
+        var refinedMaterialsSideItem = new SideNavItem("Refined Materials", RefinedMaterialsView.class,
+                LineAwesomeIcon.HAMMER_SOLID.create());
+        refinedMaterialsSideItem.setSuffixComponent(buildCountSuffixItem(refinedMaterialService.count()));
+        nav.addItem(refinedMaterialsSideItem);
+
+        var craftingItems = new SideNavItem("All Other Crafting Items", CraftingItemsView.class,
+                LineAwesomeIcon.COLUMNS_SOLID.create());
+        craftingItems.setSuffixComponent(buildCountSuffixItem(craftingItemService.count()));
+        nav.addItem(craftingItems);
+
+        var gemsSideItem = new SideNavItem("Gems", GemsView.class, LineAwesomeIcon.GEM_SOLID.create());
+        gemsSideItem.setSuffixComponent(buildCountSuffixItem(gemService.count()));
+        nav.addItem(gemsSideItem);
+
+        var locationsSideItem = new SideNavItem("Locations", LocationsView.class,
+                LineAwesomeIcon.MAP_MARKER_SOLID.create());
+        locationsSideItem.setSuffixComponent(buildCountSuffixItem(locationService.count()));
+        nav.addItem(locationsSideItem);
+
+        var seedsSideItem = new SideNavItem("Seeds", SeedsView.class, LineAwesomeIcon.SEEDLING_SOLID.create());
+        seedsSideItem.setSuffixComponent(buildCountSuffixItem(seedService.count()));
+        nav.addItem(seedsSideItem);
 
         return nav;
+    }
+
+    private Span buildCountSuffixItem(Integer count) {
+        Span serviceItemCounter = new Span(count.toString());
+        serviceItemCounter.getElement().getThemeList().add("badge contrast pill");
+        serviceItemCounter.getElement().setAttribute("aria-label", "12 unread messages");
+        return serviceItemCounter;
     }
 
     private Footer createFooter() {
