@@ -1,13 +1,11 @@
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.AllArgsConstructor;
-import lombok.RequiredArgsConstructor;
 import org.example.CharacterDataBuilder;
 import org.example.entities.CharacterEntity;
 import org.example.models.CharacterModel;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -36,18 +34,18 @@ public class CharacterDataBuilderTest {
 
         List<CharacterModel.CharacterSchedule> expected = List.of(
                 CharacterModel.CharacterSchedule.builder()
-                        .start(LocalTime.parse("1:00 AM", formatter))
-                        .end(LocalTime.parse("3:00 AM", formatter))
+                        .start(LocalTime.parse("1:00 AM", formatter).getHour())
+                        .end(LocalTime.parse("3:00 AM", formatter).getHour())
                         .location("Chez Remy eating inside the Restaurant.")
                         .build(),
                 CharacterModel.CharacterSchedule.builder()
-                        .start(LocalTime.parse("3:00 AM", formatter))
-                        .end(LocalTime.parse("7:00 AM", formatter))
+                        .start(LocalTime.parse("3:00 AM", formatter).getHour())
+                        .end(LocalTime.parse("7:00 AM", formatter).getHour())
                         .location("Wandering the Valley, his home, and other villager homes.")
                         .build(),
                 CharacterModel.CharacterSchedule.builder()
-                        .start(LocalTime.parse("7:00 AM", formatter))
-                        .end(LocalTime.parse("1:00 AM", formatter))
+                        .start(LocalTime.parse("7:00 AM", formatter).getHour())
+                        .end(LocalTime.parse("1:00 AM", formatter).getHour())
                         .location("Unavailable. Sleeping inside his home.")
                         .build()
         );
